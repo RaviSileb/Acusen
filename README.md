@@ -5,187 +5,116 @@ Mobile application for 24/7 acoustic monitoring with machine learning sound dete
 ## Donate
 <img width="309" height="306" alt="image" src="https://github.com/user-attachments/assets/ebca3be0-74ff-4cc7-bc88-797b3ea6ee59" />
 
+## Functionality
 
-## Funkcionalita
+### ✅ Implemented
+- 🎯 **Recording audio samples** - Record and name 5-10s audio samples
+- 🔬 **Audio analysis** - Button for processing audio into a mathematical formula (MFCC)
+- 📊 **Display results** - Spectral centroid, dominant frequency, signal energy
+- 📈 **MFCC Graphs** - Visualization of mathematical formula (fingerprints) for each sample
+- 📱 **Modern UI** - Material Design 3 with an intuitive interface
+- 📜 **Scrollability** - All screens support vertical scrolling
+- 🎛️ **Pattern management** - List, activation/deactivation, deletion of learned patterns with graphs
+- ⚙️ **Alert settings** - Email notification configuration
+- 🔐 **Permissions** - Microphone, location and notification management
+- 🏗️ **Architecture** - MVVM pattern with ViewModels and Compose UI
+- 💾 **Data storage** - SharedPreferences with JSON serialization
+- ℹ️ **Info panels** - Technical information about audio signal processing
+- 🎯 **Action panels** - Direct display of permissions, statistics and alarm history on the home page
+- 🔧 **Function switches** - Real-time activation/deactivation of patterns
+- 📍 **GPS location** - Obtaining and attaching GPS coordinates to alerts and detection history
+- 📋 **Alarm history** - Complete detection history with GPS coordinates, accuracy and timestamps
+- 📈 **GPS statistics** - Number of detections with GPS, accuracy of locations in history
+- ☑️ **Checkbox control** - Checkbox for including/excluding patterns from the list of active detected patterns
+- 📊 **Real-time statistics** - Dynamic display of the number of active patterns in detection
+- 🔊 **DSP components** - ✅ COMPLETED - Advanced MFCC processor, DTW matcher, FFT analyzer
+- 📊 **Audio processing** - ✅ COMPLETED - Real-time analysis, circular buffer, fingerprinting
+- 🤖 **Pattern Recognition** - ✅ COMPLETED - Advanced Sound Pattern Classifier
+- 🎧 **Real-time Processor** - ✅ COMPLETED - RealTimeAudioProcessor with AudioRecord
 
-### ✅ Implementováno
-- 🎯 **Nahrávání zvukových vzorů** - Nahrání a pojmenování 5-10s audio vzorů
-- 🔬 **Analýza zvuku** - Tlačítko pro zpracování zvuku do matematického vzorce (MFCC)
-- 📊 **Zobrazení výsledků** - Spektrální centroid, dominantní frekvence, energie signálu
-- 📈 **MFCC Grafy** - Vizualizace matematického vzorce (fingerprints) u každého vzoru
-- 📱 **Moderní UI** - Material Design 3 s intuitivním rozhraním
-- 📜 **Scrollovatelnost** - Všechny obrazovky podporují vertikální scrollování
-- 🎛️ **Správa vzorů** - Seznam, aktivace/deaktivace, mazání naučených vzorů s grafy
-- ⚙️ **Nastavení alertů** - Konfigurace e-mailového upozorňování
-- 🔐 **Oprávnění** - Správa mikrofonu, lokace a notifikací
-- 🏗️ **Architektura** - MVVM pattern s ViewModely a Compose UI
-- 💾 **Data storage** - SharedPreferences s JSON serializací
-- ℹ️ **Info panely** - Technické informace o zpracování audio signálu
-- 🎯 **Akční panely** - Přímé zobrazení oprávnění, statistik a historie alarmů na úvodní stránce
-- 🔧 **Funkční přepínače** - Aktivace/deaktivace vzorů v real-time
-- 📍 **GPS lokace** - Získání a přiložení GPS souřadnic k alertům a historii detekčí
-- 📋 **Historie alarmů** - Úplná historie detekčí s GPS souřadnicemi, přesností a časovými značkami
-- 📈 **GPS statistiky** - Počet detekčí s GPS, přesnost lokací v historii
-- ☑️ **Checkbox ovládání** - Checkbox pro zařazení/vyřazení vzorů ze seznamu aktivních detekovaných vzorů
-- 📊 **Real-time statistiky** - Dynamické zobrazení počtu aktivních vzorů v detekci
-- 🔊 **DSP komponenty** - ✅ DOKONČENO - Pokročilý MFCC processor, DTW matcher, FFT analyzer
-- 📊 **Audio zpracování** - ✅ DOKONČENO - Real-time analýza, circular buffer, fingerprinting
-- 🤖 **Pattern Recognition** - ✅ DOKONČENO - Pokročilý Sound Pattern Classifier
-- 🎧 **Real-time Processor** - ✅ DOKONČENO - RealTimeAudioProcessor s AudioRecord
+### 🚧 Ready to implement
+- 🤖 **Machine Learning** - Adaptive learning and pattern enhancement
+- 📧 **Email system** - ✅ Partially implemented (with GPS)
+- 📍 **GPS location** - ✅ COMPLETED
+- 🔄 **Background service** - ✅ Advanced implementation with DSP integration
+- 📤 **Export/Import** - Backup and restore patterns
 
-### 🚧 Připraveno k implementaci
-- 🤖 **Machine Learning** - Adaptivní učení a pattern enhancement
-- 📧 **Email systém** - ✅ Částečně implementováno (s GPS)
-- 📍 **GPS lokace** - ✅ DOKONČENO
-- 🔄 **Background služba** - ✅ Pokročilá implementace s DSP integrací
-- 📤 **Export/Import** - Záloha a obnovení vzorů
-
-## Technické specifikace
+## Technical specifications
 
 - **Platform**: Android 14+ (API 34+)
-- **Jazyk**: Kotlin
+- **Language**: Kotlin
 - **UI Framework**: Jetpack Compose
-- **Architektura**: MVVM
+- **Architecture**: MVVM
 - **Dependencies**: Material 3, Location Services, JavaMail
 
-## Struktura projektu
+## Project structure
 
 ```
 app/src/main/java/com/example/acusen/
-├── alert/                  # E-mail alerting systém
-│   ├── AlertManager.kt     # ✅ GPS integrace
-│   ├── EmailAlertService.kt
-│   └── LocationService.kt  # ✅ GPS služba
-├── audio/                  # Audio nahrávání a buffer
-│   ├── AudioRecordingManager.kt
-│   └── CircularAudioBuffer.kt
-├── classifier/             # ML klasifikace zvuků
-│   └── SoundPatternClassifier.kt
-├── data/                   # Data modely
-│   ├── SoundPattern.kt     # ✅ GPS souřadnice
-│   └── AlarmDetection.kt   # ✅ Historie s GPS
-├── dsp/                    # Digitální zpracování signálu
-│   ├── MFCCProcessor.kt
-│   ├── DTWMatcher.kt
-│   └── FFTAnalyzer.kt
-├── service/                # Background služby
-│   └── AcousticMonitoringService.kt
-├── storage/                # Data persistence
-│   ├── PatternStorageManager.kt
-│   └── AlarmHistoryStorageManager.kt # ✅ GPS historie
-├── ui/components/          # UI komponenty
-│   └── MFCCGraph.kt       # ✅ Graf komponenta
-├── ui/screens/             # UI obrazovky
-│   ├── MainScreen.kt
-│   ├── MonitoringScreen.kt # ✅ GPS v historii
-│   ├── PatternsListScreen.kt
-│   ├── RecordingScreen.kt
-│   └── SettingsScreen.kt   # ✅ GPS nastavení
-├── viewmodel/              # ViewModely
-│   ├── AlertViewModel.kt
-│   ├── MonitoringViewModel.kt # ✅ GPS historie
-│   └── SoundPatternViewModel.kt
+├── alert/ # Email alerting system
+│ ├── AlertManager.kt # ✅ GPS integration
+│ ├── EmailAlertService.kt
+│ └── LocationService.kt # ✅ GPS service
+├── audio/ # Audio recording and buffering
+│ ├── AudioRecordingManager.kt
+│ └── CircularAudioBuffer.kt
+├── classifier/ # ML sound classification
+│ └── SoundPatternClassifier.kt
+├── data/ # Data models
+│ ├── SoundPattern.kt # ✅ GPS coordinates
+│ └── AlarmDetection.kt # ✅ GPS history
+├── dsp/ # Digital Signal Processing
+│ ├── MFCCProcessor.kt
+│ ├── DTWMatcher.kt
+│ └── FFTAnalyzer.kt
+├── service/ # Background services
+│ └── AcousticMonitoringService.kt
+├── storage/ # Data persistence
+│ ├── PatternStorageManager.kt
+│ └── AlarmHistoryStorageManager.kt # ✅ GPS history
+├── ui/components/ # UI components
+│ └── MFCCGraph.kt # ✅ Graph component
+├── ui/screens/ # UI screens
+│ ├── MainScreen.kt
+│ ├── MonitoringScreen.kt # ✅ GPS history
+│ ├── PatternsListScreen.kt
+│ ├── RecordingScreen.kt
+│ └── SettingsScreen.kt # ✅ GPS settings
+├── viewmodel/ # ViewModels
+│ ├── AlertViewModel.kt
+│ ├── MonitoringViewModel.kt # ✅ GPS history
+│ └── SoundPatternViewModel.kt
 └── MainActivity.kt
 ```
 
-## Oprávnění
+## Permissions
 
-Aplikace vyžaduje následující oprávnění:
-- `RECORD_AUDIO` - Nahrávání zvuku
-- `ACCESS_FINE_LOCATION` - GPS lokace pro alerty  
-- `ACCESS_COARSE_LOCATION` - Přibližná lokace
+The application requires the following permissions:
+- `RECORD_AUDIO` - Record audio
+- `ACCESS_FINE_LOCATION` - GPS location for alerts
+- `ACCESS_COARSE_LOCATION` - Approximate location
 - `FOREGROUND_SERVICE` - Background monitoring
-- `POST_NOTIFICATIONS` - Notifikace
+- `POST_NOTIFICATIONS` - Notifications
 
-## Instalace
+## Installation
 
-1. Otevřete projekt v Android Studio
-2. Synchronizujte Gradle dependencies
-3. Spusťte na zařízení s Android 14+
+1. Open the project in Android Studio
+2. Sync Gradle dependencies
+3. Run on a device with Android 14+
 
-## Použití
+## Usage
 
-1. **Nahrání vzoru**: 
-   - Přejděte do sekce "Nahrání"
-   - Stiskněte tlačítko nahrávání
-   - Nahrajte 5-10s zvuku
-   - Stiskněte "ZPRACOVAT DO VZORCE" pro analýzu
-   - **Zobrazí se MFCC graf** ukazující matematickou reprezentaci zvuku
-   - Prohlédněte si technické parametry v info panelu
-   - Pojmenujte a uložte vzor
+1. **Upload a pattern**:
+- Go to the "Upload" section
+- Press the record button
+- Record 5-10s of audio
+- Press "PROCESS INTO PATTERN" for analysis
+- **The MFCC graph** will be displayed showing the mathematical representation of the sound
+- View the technical parameters in the info panel
+- Name and save the pattern
 
 2. **Monitoring**:
-   - Přejděte do sekce "Monitoring" 
-   - Stiskněte "SPUSTIT MONITORING"
-   - Na úvodní stránce uvidíte přímo:
-     - **Oprávnění aplikace** - status všech potřebných oprávnění s celkovým počtem
-     - **Statistiky monitoringu** - aktivní vzory, počet detekí, doba běhu, úspěšnost, GPS pokrytí
-     - **Historie detekovaných alarmů** - posledních 5 zachycených zvuků s časy, přesností a GPS souřadnicemi
-   - Aplikace bude poslouchat na pozadí
-
-3. **Nastavení alertů**:
-   - V "Nastavení" povolte e-mailové upozornění
-   - Vyplňte e-mail příjemce a odesílatele
-   - Nastavte SMTP parametry
-   - **Povolte "Zahrnout GPS lokaci"** pro přiložení souřadnic k alertům
-   - Otestujte funkčnost
-
-4. **Správa vzorů**:
-   - V sekci "Vzory" můžete aktivovat/deaktivovat naučené vzory pomocí **checkboxu**
-   - **☑️ Zaškrtnutý checkbox** = vzor je zařazen do seznamu aktivních detekovaných vzorů
-   - **☐ Nezaškrtnutý checkbox** = vzor je vyřazen ze seznamu aktivních detekovaných vzorů
-   - **Každý vzor zobrazuje MFCC graf** jeho zvukové sekvence
-   - **Vizuální rozlišení** - aktivní vzory mají zvýrazněnou kartu s orámováním
-   - **Real-time počítadlo** - v záhlaví je zobrazen počet aktivních vzorů
-   - Smazat nepotřebné vzory
-   - Prohlédnout si matematické vzorce (fingerprints) jednotlivých zvuků
-
-## Další vývoj
-
-Prioritní úkoly pro dokončení:
-1. Implementace skutečného audio nahrávání (AudioRecord)
-2. Dokončení DSP algoritmů (MFCC, DTW, FFT)
-3. Aktivace background monitoring služby
-4. Testování e-mail alerting systému
-5. Optimalizace battery consumption
-6. Přidání export/import funkcionalit
-
-## Licence
-
-Projekt vytvořen podle specifikace "MASTER SPECIFICATION: Acoustic Sentinel".
-
-## Pokročilé DSP komponenty
-
-### 🔊 MFCC Processor
-- **Mel-frequency cepstral coefficients** pro převod zvuku na matematické otisky
-- **Pre-emphasis filtr** pro zvýraznění vyšších frekvencí  
-- **Hamming windowing** a **FFT zpracování**
-- **Mel filter bank** a **DCT transformace**
-- **13 MFCC koeficientů** pro každý zvukový vzor
-
-### 📊 FFT Analyzer  
-- **Cooley-Tukey FFT algoritmus** pro spektrální analýzu
-- **Detekce dunění** v pásmu 20-100 Hz
-- **Spektrální charakteristiky** - centroid, spread, dominantní frekvence
-- **Transient analýza** pro detekci ostrých přechodů
-- **Real-time zpracování** s optimalizovanými algoritmy
-
-### 🎯 DTW Matcher
-- **Dynamic Time Warping** pro porovnání sekvencí v různém tempu
-- **Sakoe-Chiba band** omezení pro optimalizaci
-- **Multi-metrické porovnání** - DTW, cosine similarity, correlation
-- **Pokročilé confidence scoring** s kombinovanými algoritmy
-
-### 🔄 Real-time Audio Processing
-- **CircularAudioBuffer** - uchovává posledních 15 sekund audio dat
-- **Noise gate** a **high-pass filtering**
-- **Signal level monitoring** a **silence detection**
-- **WAV export** funkcionalita
-- **Thread-safe operace** s optimalizovaným locking
-
-### 🤖 Sound Pattern Classifier
-- **Machine learning přístup** ke klasifikaci zvuků
-- **Multi-feature fusion** - MFCC + spektrální + časové charakteristiky
-- **Automatické rozpoznání typu** - sirén, alarm, mechanické poruchy
-- **Adaptivní learning** pro zlepšení přesnosti
-- **Paralelní zpracování** pro real-time performance
+- Go to the "Monitoring" section
+- Press "START MONITORING"
+- On the home page you will see directly:
+- **Application permissions** - the status of all required permissions with the total number
