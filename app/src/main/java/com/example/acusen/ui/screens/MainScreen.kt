@@ -22,7 +22,7 @@ fun MainScreen() {
         TabInfo("Monitoring", Icons.Default.PlayArrow),
         TabInfo("Vzory", Icons.Default.List),
         TabInfo("Nahrání", Icons.Default.Add),
-        TabInfo("Export/Import", Icons.Default.ImportExport),
+        TabInfo("Export/Import", Icons.Default.Share),
         TabInfo("Nastavení", Icons.Default.Settings)
     )
 
