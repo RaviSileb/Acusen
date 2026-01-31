@@ -1,5 +1,6 @@
 # Acoustic Sentinel
 
+Mobile application for 24/7 acoustic monitoring with machine learning sound detection.
 Mobilní aplikace pro 24/7 akustický monitoring s machine learning detekcí zvuků.
 
 ## Donate
