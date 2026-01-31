@@ -6,6 +6,10 @@
 
 Mobilní aplikace pro 24/7 akustický monitoring s machine learning detekcí zvuků.
 
+## Donate
+<img width="309" height="306" alt="image" src="https://github.com/user-attachments/assets/39574d87-57cb-4caf-91e9-749888e4577f" />
+
+
 ## Funkcionalita
 
 ### ✅ Implementováno
